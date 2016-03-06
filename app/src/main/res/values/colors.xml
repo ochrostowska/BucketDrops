@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/negative</color>
+    <color name="colorPrimaryDark">@color/black</color>
+    <color name="colorAccent">@color/accentAquaGreen</color>
+
+    <color name="white">#FFF</color>
+    <color name="black">#000</color>
+    <color name="negative">#241543</color>
+    <color name="transparent">@android:color/transparent</color>
+    <color name="accentPurple">#B691FF</color>
+    <color name="accentAquaGreen">#05FFCA</color>
+    <color name="dropRowDark">#BD8E79BB</color>
+    <color name="dropRowLight">#4A8E79BB</color>
+</resources>

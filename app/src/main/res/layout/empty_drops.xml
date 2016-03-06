@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <ImageView
+        android:id="@+id/bucket_logo"
+        android:layout_width="@dimen/logo_size"
+        android:layout_height="@dimen/logo_size"
+        android:src="@drawable/logo_large"
+        android:layout_margin="@dimen/logo_margin"
+        android:scaleType="fitCenter"
+        android:layout_centerHorizontal="true"
+        />
+
+    <Button
+        android:id="@+id/button_add"
+        android:layout_below="@+id/bucket_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textAllCaps="false"
+        android:fontFamily="sans-serif-thin"
+        android:textSize="26sp"
+        android:layout_margin="26dp"
+        android:paddingLeft="60dp"
+        android:paddingRight="60dp"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp"
+        android:textColor="@color/btn_add_color"
+        android:text="@string/str_add_drop"
+        android:background="@drawable/bg_btn_add_color"/>
+</RelativeLayout>
