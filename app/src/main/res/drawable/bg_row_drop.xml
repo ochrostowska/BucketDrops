@@ -5,6 +5,7 @@
             <solid android:color="@color/dropRowDark"/>
         </shape>
     </item>
+
     <item>
         <shape>
             <solid android:color="@color/dropRowLight"/>

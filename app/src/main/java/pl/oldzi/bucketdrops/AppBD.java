@@ -8,7 +8,7 @@ import io.realm.RealmConfiguration;
 /**
  * Created by Oldzi on 05.03.2016.
  */
-public class App extends Application {
+public class AppBD extends Application {
 
     @Override
     public void onCreate() {

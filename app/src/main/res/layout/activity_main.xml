@@ -20,12 +20,15 @@
         />
 
 
-    <android.support.v7.widget.RecyclerView
+    <pl.oldzi.bucketdrops.widgets.BucketRecyclerView
         android:id="@+id/dropsRecyclerView"
         android:layout_below="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layoutManager="android.support.v7.widget.LinearLayoutManager"/>
-    <include layout="@layout/empty_drops"/>
+
+    <include
+        android:id="@+id/empty_drops"
+        layout="@layout/empty_drops"/>
 
 </RelativeLayout>

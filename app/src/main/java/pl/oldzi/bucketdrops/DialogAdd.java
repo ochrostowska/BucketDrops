@@ -3,7 +3,6 @@ package pl.oldzi.bucketdrops;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
-import android.text.format.Time;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,35 +35,29 @@ public class DialogAdd extends DialogFragment {
         @Override
         public void onClick(View v) {
             int id = v.getId();
-            if(id==R.id.closeButton) {
-            dismiss();
-            } else if(id==R.id.addItButton) {
-
-                addAction();
+           switch (id) {
+               case R.id.addItButton:
+                   addAction();
+                   break;}
+            if(!realm.isClosed())  {
+                realm.close();
             }
+            dismiss();
+
         }
     };
 
     private void addAction() {
+        String what = inputWhat.getText().toString();
+        realm = Realm.getDefaultInstance();
         realm.beginTransaction();
-//        RealmConfiguration configuration = new RealmConfiguration.Builder(getActivity()).build();
-//        Realm.setDefaultConfiguration(configuration);
- String what = inputWhat.getText().toString();
-//        long now = ;
-//        realm = Realm.getDefaultInstance();
-//        Drop drop = new Drop(what, now, 0, false);
-//        realm.beginTransaction();
-        Time time = new Time();
-        time.setToNow();
-        long now = time.toMillis(false);
-        Drop drop = realm.createObject(Drop.class);
-        drop.setWhat(what);
-        drop.setTime(now);
-        drop.setCompleted(false);
-        drop.setAdded(now);
+        long now = System.currentTimeMillis();
+        Drop drop = new Drop(what, now, now, false);
+        realm.copyToRealm(drop);
         realm.commitTransaction();
         Toast.makeText(getContext(), "Added " +what, Toast.LENGTH_SHORT).show();
         a=a+1;
+
     }
 
     @Nullable
@@ -84,9 +77,4 @@ public class DialogAdd extends DialogFragment {
         addItButton.setOnClickListener(buttonClickListener);
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        realm = Realm.getDefaultInstance();
-    }
 }
